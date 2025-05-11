@@ -1,7 +1,7 @@
 package com.exemplo.model;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SistemaInfo {
     private double usoCPU;

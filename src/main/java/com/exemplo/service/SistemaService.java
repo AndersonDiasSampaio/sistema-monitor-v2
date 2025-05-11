@@ -11,8 +11,6 @@ import oshi.software.os.FileSystem;
 import oshi.software.os.OSFileStore;
 import oshi.software.os.OperatingSystem;
 
-import java.util.List;
-
 @Service
 public class SistemaService {
 

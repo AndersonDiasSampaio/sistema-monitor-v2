@@ -1,1 +1,22 @@
-[ ]
+[ {
+  "id" : 1,
+  "nome" : "Aliexpress",
+  "url" : "https://www.linkedin.com/events/7027362209408200704/comments/",
+  "descricao" : "",
+  "icone" : "bi-link-45deg",
+  "imagemPersonalizada" : null
+}, {
+  "id" : 7,
+  "nome" : "bucetinha",
+  "url" : "https://www.linkedin.com/events/7027362209408200704/comments/",
+  "descricao" : "",
+  "icone" : "custom",
+  "imagemPersonalizada" : "/uploads/1ab5daa9-5edb-4d98-8c16-180e6129658a.jpg"
+}, {
+  "id" : 8,
+  "nome" : "teste",
+  "url" : "https://www.aliexpress.com/",
+  "descricao" : "eu estou testando essa joça",
+  "icone" : "bi-file-earmark-text",
+  "imagemPersonalizada" : null
+} ]

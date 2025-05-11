@@ -8,209 +8,238 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         :root {
-            --dracula-bg: #282a36;
-            --dracula-current: #44475a;
-            --dracula-selection: #44475a;
-            --dracula-foreground: #f8f8f2;
-            --dracula-comment: #6272a4;
-            --dracula-cyan: #8be9fd;
-            --dracula-green: #50fa7b;
-            --dracula-orange: #ffb86c;
-            --dracula-pink: #ff79c6;
-            --dracula-purple: #bd93f9;
-            --dracula-red: #ff5555;
-            --dracula-yellow: #f1fa8c;
+            --primary-color: #6f42c1;
+            --primary-hover: #5a32a3;
+            --secondary-color: #4a148c;
+            --accent-color: #9c27b0;
+            --text-color: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --light-bg: #2d2d2d;
+            --card-bg: #363636;
+            --border-color: #404040;
+            --modal-bg: #2d2d2d;
+            --input-bg: #404040;
+            --input-border: #505050;
+            --input-text: #e0e0e0;
+            --progress-bg: #404040;
+            --progress-bar-bg: var(--primary-color);
+            --success-bg: #1e4620;
+            --success-text: #a3d9a5;
+            --danger-bg: #46201e;
+            --danger-text: #d9a3a3;
+            --warning-bg: #463d1e;
+            --warning-text: #d9d3a3;
+            --info-bg: #1e3a46;
+            --info-text: #a3d1d9;
         }
 
         body {
-            background-color: var(--dracula-bg);
-            color: var(--dracula-cyan);
-        }
-
-        .card {
-            background-color: var(--dracula-current);
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .progress {
-            height: 8px;
-            border-radius: 4px;
-            background-color: var(--dracula-selection);
-        }
-
-        .progress-bar {
-            border-radius: 4px;
-        }
-
-        .progress-bar.bg-primary {
-            background-color: var(--dracula-purple) !important;
-        }
-
-        .progress-bar.bg-success {
-            background-color: var(--dracula-green) !important;
-        }
-
-        .progress-bar.bg-warning {
-            background-color: var(--dracula-orange) !important;
-        }
-
-        .link-card {
-            background: linear-gradient(145deg, var(--dracula-current), var(--dracula-selection));
-        }
-
-        .link-icon {
-            font-size: 1.5rem;
-            margin-right: 10px;
-            color: var(--dracula-purple);
-        }
-
-        .metric-card {
-            background: linear-gradient(145deg, var(--dracula-current), var(--dracula-selection));
-        }
-
-        .metric-title {
-            color: var(--dracula-cyan);
-            font-weight: 500;
-        }
-
-        .metric-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--dracula-cyan);
-        }
-
-        .btn-floating {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            background-color: var(--dracula-purple);
-            border-color: var(--dracula-purple);
-        }
-
-        .btn-floating:hover {
-            background-color: var(--dracula-pink);
-            border-color: var(--dracula-pink);
-        }
-
-        .modal-content {
-            background-color: var(--dracula-current);
-            border: none;
-            border-radius: 8px;
-            color: var(--dracula-foreground);
-        }
-
-        .modal-header {
-            border-bottom: 1px solid var(--dracula-selection);
-            padding: 1.5rem;
-        }
-
-        .modal-body {
-            padding: 1.5rem;
-        }
-
-        .modal-footer {
-            border-top: 1px solid var(--dracula-selection);
-            padding: 1.5rem;
-        }
-
-        .form-control, .form-select {
-            background-color: var(--dracula-bg);
-            border: 1px solid var(--dracula-selection);
-            color: var(--dracula-foreground);
-            border-radius: 4px;
-            padding: 0.75rem 1rem;
-        }
-
-        .form-control:focus, .form-select:focus {
-            background-color: var(--dracula-bg);
-            border-color: var(--dracula-purple);
-            color: var(--dracula-foreground);
-            box-shadow: 0 0 0 0.2rem rgba(189, 147, 249, 0.25);
-        }
-
-        .btn {
-            border-radius: 4px;
-            padding: 0.75rem 1.5rem;
-            font-weight: 500;
-            text-transform: none;
-        }
-
-        .btn-primary {
-            background-color: var(--dracula-purple);
-            border-color: var(--dracula-purple);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--dracula-pink);
-            border-color: var(--dracula-pink);
-        }
-
-        .btn-outline-primary {
-            color: var(--dracula-purple);
-            border-color: var(--dracula-purple);
-        }
-
-        .btn-outline-primary:hover {
-            background-color: var(--dracula-purple);
-            border-color: var(--dracula-purple);
-        }
-
-        .btn-outline-danger {
-            color: var(--dracula-red);
-            border-color: var(--dracula-red);
-        }
-
-        .btn-outline-danger:hover {
-            background-color: var(--dracula-red);
-            border-color: var(--dracula-red);
-        }
-
-        .card-title {
-            color: var(--dracula-cyan);
-            font-weight: 500;
-        }
-
-        .text-muted {
-            color: var(--dracula-cyan) !important;
-            opacity: 0.8;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .navbar {
-            background-color: var(--dracula-current);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .navbar-brand {
-            color: var(--dracula-cyan) !important;
-            font-weight: 500;
+            color: var(--text-color) !important;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: var(--text-color);
+        }
+
+        .btn-danger {
+            background-color: var(--danger-bg);
+            border-color: var(--danger-bg);
+            color: var(--danger-text);
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+            color: var(--text-color);
+        }
+
+        .link-card {
+            background-color: var(--card-bg);
+            border: 2px solid #000000;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .link-icon {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .btn-group {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .modal-content {
+            background-color: var(--modal-bg);
+            border-radius: 8px;
+            border: none;
+            color: var(--text-color);
+        }
+
+        .modal-header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .modal-title {
+            font-weight: 600;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .form-control, .form-select {
+            background-color: var(--input-bg);
+            border-color: var(--input-border);
+            color: var(--input-text);
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: var(--input-bg);
+            border-color: var(--primary-color);
+            color: var(--input-text);
+            box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+        }
+
+        .alert {
+            border-radius: 8px;
+            border: none;
+        }
+
+        .alert-success {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+        }
+
+        .alert-danger {
+            background-color: var(--danger-bg);
+            color: var(--danger-text);
         }
 
         .btn-close {
-            filter: invert(1) grayscale(100%) brightness(200%);
+            color: var(--text-color);
+            opacity: 0.8;
         }
 
-        /* Estilo para o select de ícones */
-        .form-select option {
-            background-color: var(--dracula-bg);
-            color: var(--dracula-foreground);
+        .btn-close:hover {
+            color: var(--text-color);
+            opacity: 1;
         }
 
-        /* Estilo para links */
-        a {
-            color: var(--dracula-purple);
+        .form-label {
+            font-weight: 500;
+            color: var(--text-color);
         }
 
-        a:hover {
-            color: var(--dracula-pink);
+        .text-muted {
+            color: var(--text-secondary) !important;
+        }
+
+        .progress {
+            background-color: var(--progress-bg);
+        }
+
+        .progress-bar {
+            background-color: var(--progress-bar-bg);
+        }
+
+        .metric-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-title {
+            color: var(--text-color);
+        }
+
+        .metric-value {
+            color: var(--text-color);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        .btn-outline-danger {
+            color: var(--danger-text);
+            border-color: var(--danger-bg);
+        }
+
+        .btn-outline-danger:hover {
+            background-color: var(--danger-bg);
+            border-color: var(--danger-bg);
+            color: var(--text-color);
+        }
+
+        .btn-outline-secondary {
+            color: var(--text-secondary);
+            border-color: var(--border-color);
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: var(--border-color);
+            border-color: var(--border-color);
+            color: var(--text-color);
         }
 
         /* Estilo para o scrollbar */
@@ -220,40 +249,194 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--dracula-bg);
+            background: var(--light-bg);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--dracula-selection);
+            background: var(--border-color);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--dracula-purple);
+            background: var(--primary-color);
         }
 
-        .card-text {
-            color: var(--dracula-cyan);
-            opacity: 0.8;
+        /* Estilo para links */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
-        .form-label {
-            color: var(--dracula-cyan);
-            font-weight: 500;
+        a:hover {
+            color: var(--primary-hover);
         }
 
-        .modal-title {
-            color: var(--dracula-cyan);
+        /* Estilo para selects */
+        .form-select option {
+            background-color: var(--input-bg);
+            color: var(--input-text);
         }
 
-        .small {
-            color: var(--dracula-cyan);
-            opacity: 0.8;
+        /* Estilo para tooltips */
+        .tooltip {
+            background-color: var(--card-bg);
+            color: var(--text-color);
         }
 
-        .modal-body small {
-            color: var(--dracula-cyan);
-            opacity: 0.8;
+        /* Estilo para dropdowns */
+        .dropdown-menu {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-item {
+            color: var(--text-color);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--input-bg);
+            color: var(--text-color);
+        }
+
+        /* Estilo para modais */
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem;
+        }
+
+        .card-title {
+            color: var(--text-color);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .service-card .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+
+        .service-card .card-title {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .service-card .card-text {
+            color: var(--text-secondary);
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .service-card .btn-group {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .service-card .btn-primary {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .disk-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .disk-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .disk-card .card-title {
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .disk-card .progress {
+            background-color: var(--progress-bg);
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .disk-card .progress-bar {
+            background-color: var(--progress-bar-bg);
+            border-radius: 4px;
+        }
+
+        .disk-card .metric-value {
+            color: var(--text-color);
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .disk-card .text-muted {
+            color: var(--text-secondary) !important;
+            font-size: 0.875rem;
+        }
+
+        .disk-info {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .disk-info span {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .disk-info i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
         }
     </style>
 </head>
@@ -314,31 +497,20 @@
             </div>
         </div>
 
-        <!-- Detalhes dos Discos -->
+        <!-- Gerenciamento de Links -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-header">
                         <h5 class="card-title">
-                            <i class="bi bi-hdd-rack me-2"></i>Detalhes dos Discos
+                            <i class="bi bi-link-45deg me-2"></i>Links de Serviços
                         </h5>
-                        <div class="row" id="discosContainer">
-                            <!-- Informações dos discos serão inseridas aqui dinamicamente -->
-                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Gerenciamento de Links -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="card-title">
-                                <i class="bi bi-link-45deg me-2"></i>Links de Serviços
-                            </h5>
+                        <div class="d-flex justify-content-end mb-4">
+                            <button class="btn btn-primary" onclick="solicitarAutenticacao('adicionar')">
+                                <i class="bi bi-plus-lg me-2"></i>Adicionar Link
+                            </button>
                         </div>
                         <div class="row" id="linksContainer">
                             <!-- Links serão inseridos aqui dinamicamente -->
@@ -347,12 +519,28 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Botão Flutuante para Adicionar Link -->
-    <button class="btn btn-primary btn-floating rounded-circle" onclick="solicitarAutenticacao('adicionar')">
-        <i class="bi bi-plus-lg"></i>
-    </button>
+        <!-- Detalhes dos Discos -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">
+                            <i class="bi bi-hdd-rack me-2"></i>Detalhes dos Discos
+                        </h5>
+                        <button class="btn btn-sm btn-outline-primary" onclick="toggleDiscos()">
+                            <i class="bi bi-chevron-down" id="discosToggleIcon"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="discosContainer" style="display: none;">
+                            <!-- Informações dos discos serão inseridas aqui dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal para Adicionar/Editar Link -->
     <div class="modal fade" id="linkModal" tabindex="-1">
@@ -443,8 +631,20 @@
                                 <option value="bi-arrow-down">Para baixo</option>
                                 <option value="bi-arrow-left">Para esquerda</option>
                                 <option value="bi-arrow-right">Para direita</option>
+                                <option value="custom">Imagem Personalizada</option>
                             </select>
                             <small class="text-muted">Escolha um ícone para representar o serviço</small>
+                        </div>
+                        <div class="mb-3" id="imagemPersonalizadaContainer" style="display: none;">
+                            <label class="form-label">Imagem Personalizada</label>
+                            <input type="file" class="form-control" id="linkImagem" accept="image/*">
+                            <small class="text-muted">Selecione uma imagem para usar como ícone (será redimensionada para 128x128 pixels)</small>
+                            <div id="imagemPreview" class="mt-2 text-center" style="display: none;">
+                                <img id="previewImg" src="" alt="Preview" style="max-width: 128px; max-height: 128px;">
+                                <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="removerImagem()">
+                                    <i class="bi bi-trash"></i> Remover
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -461,20 +661,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Autenticação de Administrador</h5>
+                    <h5 class="modal-title" id="authModalTitle">Autenticação de Administrador</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <form id="authForm">
                         <div class="mb-3">
                             <label class="form-label">Senha de Administrador</label>
-                            <input type="password" class="form-control" id="adminPassword" required>
+                            <input type="password" class="form-control" id="senhaInput" required>
+                            <div id="senhaError" class="text-danger mt-2" style="display: none;"></div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="confirmarAutenticacao()">Confirmar</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirmarSenha">Confirmar</button>
                 </div>
             </div>
         </div>
@@ -541,36 +742,38 @@
                     // Atualiza as cores dos indicadores
                     atualizarCoresRecursos(data);
                     
-                    // Atualiza os detalhes dos discos
+                    // Atualiza os detalhes dos discos apenas se estiverem visíveis
                     const discosContainer = document.getElementById('discosContainer');
-                    discosContainer.innerHTML = '';
-                    
-                    data.discos.forEach(disco => {
-                        const col = document.createElement('div');
-                        col.className = 'col-md-6 mb-3';
-                        col.innerHTML = `
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="card-title">
-                                        <i class="bi bi-hdd me-2"></i>${disco.nome}
-                                    </h6>
-                                    <small class="text-muted d-block mb-2">Montagem: ${disco.montagem}</small>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar" role="progressbar" 
-                                             style="width: ${disco.usoPercentual}%; background-color: ${calcularCor(disco.usoPercentual)}">
+                    if (discosContainer.style.display !== 'none') {
+                        discosContainer.innerHTML = '';
+                        
+                        data.discos.forEach(disco => {
+                            const col = document.createElement('div');
+                            col.className = 'col-md-6 mb-3';
+                            col.innerHTML = `
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">
+                                            <i class="bi bi-hdd me-2"></i>${disco.nome}
+                                        </h6>
+                                        <small class="text-muted d-block mb-2">Montagem: ${disco.montagem}</small>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar" role="progressbar" 
+                                                 style="width: ${disco.usoPercentual}%; background-color: ${calcularCor(disco.usoPercentual)}">
+                                            </div>
                                         </div>
+                                        <div class="metric-value">${disco.usoPercentual.toFixed(1)}%</div>
+                                        <small class="text-muted">
+                                            Total: ${formatBytes(disco.total)} | 
+                                            Usado: ${formatBytes(disco.usado)} | 
+                                            Disponível: ${formatBytes(disco.disponivel)}
+                                        </small>
                                     </div>
-                                    <div class="metric-value">${disco.usoPercentual.toFixed(1)}%</div>
-                                    <small class="text-muted">
-                                        Total: ${formatBytes(disco.total)} | 
-                                        Usado: ${formatBytes(disco.usado)} | 
-                                        Disponível: ${formatBytes(disco.disponivel)}
-                                    </small>
                                 </div>
-                            </div>
-                        `;
-                        discosContainer.appendChild(col);
-                    });
+                            `;
+                            discosContainer.appendChild(col);
+                        });
+                    }
                 })
                 .catch(error => console.error('Erro ao atualizar dados:', error));
         }
@@ -589,18 +792,28 @@
             linkModal = new bootstrap.Modal(modalElement);
             authModal = new bootstrap.Modal(authModalElement);
             
+            // Adiciona event listener para o botão de confirmar senha
+            document.getElementById('btnConfirmarSenha').addEventListener('click', confirmarAutenticacao);
+            
             // Carrega os links iniciais
             carregarLinks();
         });
 
         function solicitarAutenticacao(operacao) {
             operacaoPendente = operacao;
-            document.getElementById('adminPassword').value = '';
+            document.getElementById('senhaInput').value = '';
             authModal.show();
         }
 
         function confirmarAutenticacao() {
-            senhaAdmin = document.getElementById('adminPassword').value;
+            const senha = document.getElementById('senhaInput').value;
+            if (!senha) {
+                document.getElementById('senhaError').textContent = 'Por favor, digite a senha';
+                document.getElementById('senhaError').style.display = 'block';
+                return;
+            }
+            
+            senhaAdmin = senha;
             authModal.hide();
 
             switch(operacaoPendente) {
@@ -651,36 +864,104 @@
         }
 
         function editarLink(id) {
-            fetch(`/api/links/${id}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erro ao carregar o link');
+            // Limpar o modal de autenticação
+            document.getElementById('authModalTitle').textContent = 'Autenticação';
+            document.getElementById('senhaInput').value = '';
+            document.getElementById('senhaError').style.display = 'none';
+            
+            // Remover todos os event listeners anteriores do botão
+            const btnConfirmarSenha = document.getElementById('btnConfirmarSenha');
+            const newBtn = btnConfirmarSenha.cloneNode(true);
+            btnConfirmarSenha.parentNode.replaceChild(newBtn, btnConfirmarSenha);
+            
+            // Adicionar novo event listener
+            newBtn.addEventListener('click', function() {
+                const senha = document.getElementById('senhaInput').value;
+                if (!senha) {
+                    document.getElementById('senhaError').textContent = 'Por favor, digite a senha';
+                    document.getElementById('senhaError').style.display = 'block';
+                    return;
+                }
+
+                fetch(`/api/links/${id}`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-Admin-Password': senha
                     }
-                    return response.json();
                 })
-                .then(link => {
-                    document.getElementById('modalTitle').textContent = 'Editar Link';
-                    document.getElementById('linkId').value = link.id;
-                    document.getElementById('linkNome').value = link.nome;
-                    document.getElementById('linkUrl').value = link.url;
-                    document.getElementById('linkDescricao').value = link.descricao || '';
-                    document.getElementById('linkIcone').value = link.icone || 'bi-link-45deg';
-                    linkModal.show();
-                })
-                .catch(error => {
-                    console.error('Erro ao carregar link:', error);
-                    alert('Erro ao carregar o link para edição');
-                });
+                    .then(response => {
+                        if (!response.ok) {
+                            if (response.status === 401) {
+                                document.getElementById('senhaError').textContent = 'Senha de administrador inválida';
+                                document.getElementById('senhaError').style.display = 'block';
+                                throw new Error('Senha de administrador inválida');
+                            }
+                            throw new Error('Erro ao carregar o link');
+                        }
+                        return response.json();
+                    })
+                    .then(link => {
+                        // Armazenar a senha para uso posterior
+                        senhaAdmin = senha;
+                        
+                        // Fechar o modal de autenticação
+                        authModal.hide();
+                        
+                        // Preencher o modal de edição
+                        document.getElementById('modalTitle').textContent = 'Editar Link';
+                        document.getElementById('linkId').value = link.id;
+                        document.getElementById('linkNome').value = link.nome;
+                        document.getElementById('linkUrl').value = link.url;
+                        document.getElementById('linkDescricao').value = link.descricao || '';
+                        
+                        // Verificar se o link tem uma imagem personalizada
+                        if (link.imagemPersonalizada) {
+                            document.getElementById('linkIcone').value = 'custom';
+                            document.getElementById('imagemPersonalizadaContainer').style.display = 'block';
+                            document.getElementById('previewImg').src = link.imagemPersonalizada;
+                            document.getElementById('imagemPreview').style.display = 'block';
+                            document.getElementById('linkImagem').dataset.caminho = link.imagemPersonalizada;
+                        } else {
+                            document.getElementById('linkIcone').value = link.icone || 'bi-link-45deg';
+                            document.getElementById('imagemPersonalizadaContainer').style.display = 'none';
+                            document.getElementById('imagemPreview').style.display = 'none';
+                            document.getElementById('linkImagem').dataset.caminho = '';
+                        }
+                        
+                        // Abrir o modal de edição
+                        linkModal.show();
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar link:', error);
+                        if (error.message !== 'Senha de administrador inválida') {
+                            alert(error.message);
+                        }
+                    });
+            });
+            
+            // Mostrar o modal de autenticação
+            authModal.show();
         }
 
         function salvarLink() {
             const id = document.getElementById('linkId').value;
+            const iconeSelecionado = document.getElementById('linkIcone').value;
+            const imagemPersonalizada = iconeSelecionado === 'custom' ? 
+                document.getElementById('linkImagem').dataset.caminho : null;
+            
             const link = {
                 nome: document.getElementById('linkNome').value,
                 url: document.getElementById('linkUrl').value,
                 descricao: document.getElementById('linkDescricao').value,
-                icone: document.getElementById('linkIcone').value
+                icone: iconeSelecionado,
+                imagemPersonalizada: imagemPersonalizada
             };
+
+            // Se for uma edição, adicionar o ID ao objeto
+            if (id) {
+                link.id = id;
+            }
 
             const url = id ? `/api/links/${id}` : '/api/links';
             const method = id ? 'PUT' : 'POST';
@@ -704,7 +985,10 @@
             })
             .then(() => {
                 linkModal.hide();
-                carregarLinks();
+                // Força uma atualização da página após 500ms
+                setTimeout(() => {
+                    window.location.reload();
+                }, 500);
                 senhaAdmin = null;
             })
             .catch(error => {
@@ -714,6 +998,7 @@
         }
 
         function carregarLinks() {
+            console.log('Iniciando carregamento dos links...');
             fetch('/api/links')
                 .then(response => {
                     if (!response.ok) {
@@ -722,43 +1007,51 @@
                     return response.json();
                 })
                 .then(links => {
+                    console.log('Links recebidos:', links);
                     const container = document.getElementById('linksContainer');
+                    // Limpar completamente o container
                     container.innerHTML = '';
                     
                     if (links.length === 0) {
                         container.innerHTML = `
                             <div class="col-12 text-center">
                                 <p class="text-muted">Nenhum link adicionado ainda.</p>
-                                <button class="btn btn-primary" onclick="solicitarAutenticacao('adicionar')">
-                                    <i class="bi bi-plus-circle me-2"></i>Adicionar Primeiro Link
-                                </button>
                             </div>
                         `;
                         return;
                     }
                     
+                    // Criar uma nova div para cada link
                     links.forEach(link => {
+                        console.log('Processando link:', link);
                         const card = document.createElement('div');
                         card.className = 'col-md-4 mb-3';
+                        
+                        // Determinar o ícone a ser exibido
+                        let iconeHtml = '';
+                        if (link.imagemPersonalizada) {
+                            iconeHtml = `<img src="${link.imagemPersonalizada}" alt="Ícone" style="width: 128px; height: 128px; object-fit: contain;">`;
+                        } else {
+                            iconeHtml = `<i class="bi ${link.icone || 'bi-link-45deg'} link-icon" style="font-size: 64px;"></i>`;
+                        }
+                        
                         card.innerHTML = `
                             <div class="card link-card">
                                 <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <h5 class="card-title">
-                                            <i class="bi ${link.icone || 'bi-link-45deg'} link-icon"></i>
-                                            ${link.nome}
-                                        </h5>
-                                        <div class="btn-group">
-                                            <button class="btn btn-sm btn-outline-primary" onclick="editarLink(${link.id})">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger" onclick="removerLink(${link.id})">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </div>
+                                    <div class="d-flex flex-column align-items-center">
+                                        ${iconeHtml}
+                                        <h5 class="card-title">${link.nome}</h5>
                                     </div>
                                     <p class="card-text">${link.descricao || ''}</p>
-                                    <a href="${link.url}" target="_blank" class="btn btn-primary btn-sm">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-primary" onclick="editarLink('${link.id}')">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" onclick="removerLink('${link.id}')">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                    <a href="${link.url}" target="_blank" class="btn btn-primary">
                                         <i class="bi bi-box-arrow-up-right"></i> Abrir
                                     </a>
                                 </div>
@@ -766,10 +1059,16 @@
                         `;
                         container.appendChild(card);
                     });
+                    console.log('Links carregados com sucesso');
                 })
                 .catch(error => {
                     console.error('Erro ao carregar links:', error);
-                    alert('Erro ao carregar os links');
+                    const container = document.getElementById('linksContainer');
+                    container.innerHTML = `
+                        <div class="col-12 text-center">
+                            <p class="text-danger">Erro ao carregar os links. Por favor, tente novamente.</p>
+                        </div>
+                    `;
                 });
         }
 
@@ -778,6 +1077,73 @@
                 linkIdPendente = id;
                 solicitarAutenticacao('remover');
             }
+        }
+
+        // Função para alternar a visibilidade dos detalhes dos discos
+        function toggleDiscos() {
+            const discosContainer = document.getElementById('discosContainer');
+            const discosToggleIcon = document.getElementById('discosToggleIcon');
+            
+            if (discosContainer.style.display === 'none') {
+                discosContainer.style.display = 'block';
+                discosToggleIcon.classList.remove('bi-chevron-down');
+                discosToggleIcon.classList.add('bi-chevron-up');
+            } else {
+                discosContainer.style.display = 'none';
+                discosToggleIcon.classList.remove('bi-chevron-up');
+                discosToggleIcon.classList.add('bi-chevron-down');
+            }
+        }
+
+        // Função para lidar com a mudança no select de ícones
+        document.getElementById('linkIcone').addEventListener('change', function() {
+            const imagemContainer = document.getElementById('imagemPersonalizadaContainer');
+            if (this.value === 'custom') {
+                imagemContainer.style.display = 'block';
+            } else {
+                imagemContainer.style.display = 'none';
+                document.getElementById('imagemPreview').style.display = 'none';
+            }
+        });
+
+        // Função para lidar com o upload de imagem
+        document.getElementById('linkImagem').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('/api/imagens/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao fazer upload da imagem');
+                    }
+                    return response.text();
+                })
+                .then(caminhoImagem => {
+                    // Exibir preview da imagem
+                    const previewImg = document.getElementById('previewImg');
+                    previewImg.src = caminhoImagem;
+                    document.getElementById('imagemPreview').style.display = 'block';
+                    
+                    // Armazenar o caminho da imagem para uso posterior
+                    document.getElementById('linkImagem').dataset.caminho = caminhoImagem;
+                })
+                .catch(error => {
+                    console.error('Erro ao fazer upload da imagem:', error);
+                    alert('Erro ao fazer upload da imagem: ' + error.message);
+                });
+            }
+        });
+
+        // Função para remover a imagem selecionada
+        function removerImagem() {
+            document.getElementById('linkImagem').value = '';
+            document.getElementById('imagemPreview').style.display = 'none';
+            document.getElementById('linkImagem').dataset.caminho = '';
         }
 
         // Atualiza os dados do sistema a cada 4 segundos

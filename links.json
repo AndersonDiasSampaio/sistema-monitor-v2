@@ -1,7 +1,1 @@
-[ {
-  "id" : 1,
-  "nome" : "asa",
-  "url" : "https://www.aliexpress.com/",
-  "descricao" : "",
-  "icone" : "bi-link-45deg"
-} ]
+[{"id":"1","nome":"asa","url":"https://www.aliexpress.com/","descricao":"","icone":"bi-link-45deg","imagemPersonalizada":null},{"id":"fe1eeff3-ef33-4744-8e58-5886280dd64f","nome":"sasasa","url":"https://www.linkedin.com/events/7027362209408200704/comments/","descricao":"sasa","icone":"custom","imagemPersonalizada":"/uploads/bffc3cdc-86b1-42b2-92d9-06283968c492.jpg"},{"id":"8cd81019-1d8d-4fd9-b8ab-1dab09315990","nome":"sasasa","url":"https://www.linkedin.com/events/7027362209408200704/comments/","descricao":"","icone":"custom","imagemPersonalizada":"/uploads/9bd889bb-f6cd-46f3-9e7a-b64dfb20e9a3.jpg"}]
